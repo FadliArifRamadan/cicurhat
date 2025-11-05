@@ -1,0 +1,17 @@
+{
+  "name": "cicurhat-landing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:css": "npx tailwindcss -i ./src/input.css -o ./dist/styles.css --minify --content ./index.html",
+    "watch:css": "npx tailwindcss -i ./src/input.css -o ./dist/styles.css --watch --content ./index.html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.4.18"
+  }
+}

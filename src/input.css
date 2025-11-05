@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .btn-primary {
+    @apply bg-ucic-blue text-white px-6 py-3 rounded-lg shadow-md hover:shadow-lg hover:translate-y-[-2px] active:translate-y-[1px] transition-all duration-200 font-semibold;
+  }
+}

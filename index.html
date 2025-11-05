@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>CICurhat | Bimbingan Konseling Digital UCIC</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CSS -->
+    <link rel="stylesheet" href="./dist/styles.css" />
+
+    <!-- Font Awesome (CDN) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <style>
+      /* Tambahan untuk animasi fade in saat scroll */
+      .fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+      }
+      .fade-in.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Scroll halus */
+      html {
+        scroll-behavior: smooth;
+      }
+
+      .fade-in-left {
+        opacity: 0;
+        transform: translateX(-40px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+      }
+      .fade-in-right {
+        opacity: 0;
+        transform: translateX(40px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+      }
+      .fade-in-left.show,
+      .fade-in-right.show {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    </style>
+  </head>
+
+  <body class="font-poppins bg-gray-50 text-gray-900">
+    <!-- Navbar -->
+    <nav
+      class="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm border-b border-gray-100"
+    >
+      <div class="max-w-7xl mx-auto flex items-center justify-between p-4">
+        <div class="flex items-center gap-3">
+          <img
+            src="./assets/logo-ucic.png"
+            alt="Logo UCIC"
+            class="h-16 w-auto"
+          />
+        </div>
+
+        <!-- Hamburger -->
+        <button
+          id="menu-btn"
+          class="md:hidden flex flex-col space-y-1.5 focus:outline-none"
+        >
+          <span class="block w-6 h-0.5 bg-ucic-blue"></span>
+          <span class="block w-6 h-0.5 bg-ucic-blue"></span>
+          <span class="block w-6 h-0.5 bg-ucic-blue"></span>
+        </button>
+
+        <!-- Menu -->
+        <ul
+          id="menu"
+          class="hidden md:flex md:space-x-6 font-medium absolute md:static top-16 left-0 right-0 bg-white md:bg-transparent shadow-md md:shadow-none flex-col md:flex-row text-center md:text-left border-t md:border-none"
+        >
+          <li>
+            <a href="#hero" class="block py-3 md:py-0 hover:text-ucic-blue"
+              >Beranda</a
+            >
+          </li>
+          <li>
+            <a href="#masalah" class="block py-3 md:py-0 hover:text-ucic-blue"
+              >Masalah & Solusi</a
+            >
+          </li>
+          <li>
+            <a href="#fitur" class="block py-3 md:py-0 hover:text-ucic-blue"
+              >Fitur Unggulan</a
+            >
+          </li>
+          <li>
+            <a href="#early" class="block py-3 md:py-0 hover:text-ucic-blue"
+              >Untuk Sekolah</a
+            >
+          </li>
+          <li>
+            <a href="#faq" class="block py-3 md:py-0 hover:text-ucic-blue"
+              >FAQ</a
+            >
+          </li>
+        </ul>
+
+        <a
+          href="#daftar"
+          class="hidden md:inline-block bg-ucic-blue text-white px-4 py-2 rounded-lg hover:bg-[#103d89] text-sm transition"
+        >
+          Pre-Register
+        </a>
+      </div>
+    </nav>
+
+    <main class="pt-20">
+      <!-- Hero Section -->
+      <section
+        id="hero"
+        class="snap-start min-h-screen flex items-center justify-center text-center bg-cover bg-center relative fade-in"
+        style="background-image: url('./assets/hero-bg.png')"
+      >
+        <!-- Overlay blur transparan -->
+        <div class="absolute inset-0 bg-black/30 backdrop-blur-sm"></div>
+
+        <!-- Konten Hero -->
+        <div class="relative z-10 max-w-3xl px-6">
+          <div class="flex justify-center mb-6">
+            <img
+              src="./assets/logo-ucic.png"
+              alt="Logo UCIC"
+              class="h-16 w-auto drop-shadow-md"
+            />
+          </div>
+
+          <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">
+            SEGARA HADIR!
+          </h2>
+          <p class="text-lg md:text-2xl font-semibold mb-6 text-white">
+            Era Baru Bimbingan Konseling Sekolah yang Digital dan
+            <span class="text-ucic-yellow">GRATIS</span>.
+          </p>
+          <p class="text-gray-200 mb-8">
+            Daftarkan Sekolah Anda sekarang di Daftar Tunggu CICurhat dan
+            jadilah yang pertama menggunakan Platform Bimbingan Konseling Gratis
+            dari UCIC.
+          </p>
+
+          <a
+            href="#daftar"
+            class="bg-ucic-blue text-white px-6 py-3 rounded-lg shadow-md hover:shadow-lg hover:-translate-y-1 transition-all duration-300 font-semibold"
+          >
+            Amankan Slot Sekolah Anda (Pre-Register Gratis)
+          </a>
+        </div>
+      </section>
+
+      <!-- Masalah & Solusi -->
+      <section id="masalah" class="py-28 max-w-6xl mx-auto px-6 fade-in">
+        <div class="grid md:grid-cols-2 gap-10 items-center">
+          <!-- 🧩 Kolom Kiri: Masalah -->
+          <div class="fade-in-left">
+            <h3 class="text-2xl md:text-3xl font-bold text-ucic-blue mb-6">
+              Apakah Ini Yang Anda Rasakan di Sekolah?
+            </h3>
+            <ul class="space-y-4 text-lg text-gray-700">
+              <li class="flex items-start gap-3">
+                <i class="fa-solid fa-book text-ucic-blue text-xl mt-1"></i>
+                <span
+                  >Pencatatan kasus masih manual (kertas & buku tebal).</span
+                >
+              </li>
+              <li class="flex items-start gap-3">
+                <i
+                  class="fa-solid fa-chart-line text-ucic-blue text-xl mt-1"
+                ></i>
+                <span>Data siswa/kasus sulit dilacak dan dianalisis.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="fa-solid fa-coins text-ucic-blue text-xl mt-1"></i>
+                <span>Aplikasi BK lain mahal, membebani anggaran sekolah.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="fa-solid fa-comments text-ucic-blue text-xl mt-1"></i>
+                <span>Komunikasi dengan siswa/ortu sering terhambat.</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- 💡 Kolom Kanan: Solusi -->
+          <div
+            class="flex flex-col items-center text-center md:text-left fade-in-left"
+          >
+            <p class="font-semibold text-ucic-blue text-xl">
+              Saatnya Tinggalkan Cara Lama, Sambut Era BK Digital dengan
+              <span class="text-ucic-yellow">CICurhat!</span>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Fitur Unggulan -->
+      <section
+        id="fitur"
+        class="bg-[#f9fbff] py-28 fade-in snap-start min-h-screen flex items-center"
+      >
+        <div class="max-w-6xl mx-auto px-6 text-center">
+          <h3 class="text-2xl md:text-3xl font-bold mb-12 text-ucic-blue">
+            Fitur Unggulan CICurhat
+          </h3>
+
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+            <!-- 1. Pencatatan Digital -->
+            <div
+              class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-lg transition transform hover:-translate-y-1"
+            >
+              <div
+                class="bg-[#eaf2ff] w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
+              >
+                <i class="fa-solid fa-database text-2xl text-ucic-blue"></i>
+              </div>
+              <h4 class="font-semibold text-lg mb-2">Pencatatan Digital</h4>
+              <p class="text-gray-600">
+                Semua data konseling tersimpan aman di cloud, mudah diakses
+                kapan saja tanpa ribet.
+              </p>
+            </div>
+
+            <!-- 2. Layanan Bimbingan Interaktif -->
+            <div
+              class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-lg transition transform hover:-translate-y-1"
+            >
+              <div
+                class="bg-[#eaf2ff] w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
+              >
+                <i class="fa-solid fa-comments text-2xl text-ucic-blue"></i>
+              </div>
+              <h4 class="font-semibold text-lg mb-2">
+                Layanan Bimbingan Interaktif
+              </h4>
+              <p class="text-gray-600">
+                Fitur chat / sesi konseling online membuat siswa lebih nyaman
+                "curhat" secara digital.
+              </p>
+            </div>
+
+            <!-- 3. Pelaporan Otomatis -->
+            <div
+              class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-lg transition transform hover:-translate-y-1"
+            >
+              <div
+                class="bg-[#eaf2ff] w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
+              >
+                <i class="fa-solid fa-chart-line text-2xl text-ucic-blue"></i>
+              </div>
+              <h4 class="font-semibold text-lg mb-2">Pelaporan Otomatis</h4>
+              <p class="text-gray-600">
+                Laporan bulanan/tahunan langsung dibuat sistem, siap diserahkan
+                ke kepala sekolah.
+              </p>
+            </div>
+
+            <!-- 4. Manajemen Kasus Terpadu -->
+            <div
+              class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-lg transition transform hover:-translate-y-1"
+            >
+              <div
+                class="bg-[#eaf2ff] w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
+              >
+                <i class="fa-solid fa-folder-tree text-2xl text-ucic-blue"></i>
+              </div>
+              <h4 class="font-semibold text-lg mb-2">
+                Manajemen Kasus Terpadu
+              </h4>
+              <p class="text-gray-600">
+                Semua tahap dari identifikasi, follow-up, hingga penyelesaian
+                dalam satu platform.
+              </p>
+            </div>
+
+            <!-- 5. Gratis Selamanya -->
+            <div
+              class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-lg transition transform hover:-translate-y-1 md:col-span-2 lg:col-span-1 lg:col-start-2"
+            >
+              <div
+                class="bg-[#eaf2ff] w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
+              >
+                <i class="fa-solid fa-circle-check text-2xl text-ucic-blue"></i>
+              </div>
+              <h4 class="font-semibold text-lg mb-2">Gratis Selamanya</h4>
+              <p class="text-gray-600">
+                100% GRATIS tanpa biaya tersembunyi — UCIC berkomitmen memajukan
+                layanan BK sekolah.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Early Adopter -->
+      <section
+        id="early"
+        class="snap-start min-h-screen flex items-center py-28 fade-in bg-white"
+      >
+        <div class="max-w-6xl mx-auto px-6 text-center">
+          <h3 class="text-2xl md:text-3xl font-bold text-ucic-blue mb-4">
+            Keuntungan Jadi Sekolah Pendaftar Awal (Early Adopter)
+          </h3>
+          <p class="text-gray-600 mb-12 max-w-2xl mx-auto">
+            Dapatkan berbagai keuntungan eksklusif dengan mendaftarkan sekolah
+            Anda sebagai peserta awal CICurhat.
+          </p>
+
+          <div class="grid md:grid-cols-3 gap-8">
+            <!-- 1️⃣ Akses Beta Eksklusif -->
+            <div
+              class="bg-[#f9fbff] rounded-2xl p-8 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+            >
+              <div
+                class="bg-[#eaf2ff] w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
+              >
+                <i class="fa-solid fa-flask text-2xl text-ucic-blue"></i>
+              </div>
+              <h4 class="font-semibold text-lg mb-2 text-ucic-blue">
+                Akses Beta Eksklusif
+              </h4>
+              <p class="text-gray-600">
+                Dapatkan kesempatan mencoba aplikasi sebelum sekolah lain dan
+                berkontribusi memberi masukan awal.
+              </p>
+            </div>
+
+            <!-- 2️⃣ Pelatihan BK Digital Gratis -->
+            <div
+              class="bg-[#f9fbff] rounded-2xl p-8 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+            >
+              <div
+                class="bg-[#eaf2ff] w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
+              >
+                <i
+                  class="fa-solid fa-chalkboard-user text-2xl text-ucic-blue"
+                ></i>
+              </div>
+              <h4 class="font-semibold text-lg mb-2 text-ucic-blue">
+                Pelatihan BK Digital Gratis
+              </h4>
+              <p class="text-gray-600">
+                Ikuti workshop eksklusif dari Tim Ahli UCIC untuk mengoptimalkan
+                penggunaan platform CICurhat.
+              </p>
+            </div>
+
+            <!-- 3️⃣ Prioritas Feedback -->
+            <div
+              class="bg-[#f9fbff] rounded-2xl p-8 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+            >
+              <div
+                class="bg-[#eaf2ff] w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
+              >
+                <i class="fa-solid fa-comment-dots text-2xl text-ucic-blue"></i>
+              </div>
+              <h4 class="font-semibold text-lg mb-2 text-ucic-blue">
+                Prioritas Feedback
+              </h4>
+              <p class="text-gray-600">
+                Saran dari sekolah Anda akan langsung dipertimbangkan dalam
+                pengembangan versi resmi CICurhat.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Progress -->
+      <section class="py-16 bg-ucic-blue text-white text-center fade-in">
+        <h3 class="text-2xl font-bold mb-4">CICurhat Siap Meluncur 🚀</h3>
+        <p>“Sedang Diuji Coba di seluruh Sekolah Mitra UCIC.”</p>
+      </section>
+
+      <!-- FAQ -->
+      <section
+        id="faq"
+        class="snap-start min-h-screen flex items-center py-28 fade-in bg-[#f9fbff]"
+      >
+        <div class="max-w-4xl mx-auto px-6 w-full">
+          <h3
+            class="text-2xl md:text-3xl font-bold text-center mb-10 text-ucic-blue"
+          >
+            Pertanyaan yang Sering Diajukan
+          </h3>
+
+          <div class="space-y-4">
+            <!-- 1️⃣ FAQ item -->
+            <div
+              class="bg-white rounded-xl shadow-sm p-5 cursor-pointer transition hover:shadow-md faq-item"
+            >
+              <div class="flex justify-between items-center">
+                <div class="flex items-center gap-3">
+                  <i
+                    class="fa-solid fa-circle-question text-ucic-blue text-xl"
+                  ></i>
+                  <h4 class="font-semibold text-gray-800">
+                    Kapan CICurhat akan tersedia?
+                  </h4>
+                </div>
+                <i
+                  class="fa-solid fa-chevron-down text-gray-400 transition-transform duration-300"
+                ></i>
+              </div>
+              <div class="faq-content mt-3 hidden text-gray-600">
+                Kami menargetkan rilis akhir November 2025. Sekolah yang
+                mendaftar pre-register akan dihubungi terlebih dahulu.
+              </div>
+            </div>
+
+            <!-- 2️⃣ FAQ item -->
+            <div
+              class="bg-white rounded-xl shadow-sm p-5 cursor-pointer transition hover:shadow-md faq-item"
+            >
+              <div class="flex justify-between items-center">
+                <div class="flex items-center gap-3">
+                  <i
+                    class="fa-solid fa-circle-question text-ucic-blue text-xl"
+                  ></i>
+                  <h4 class="font-semibold text-gray-800">
+                    Apa yang saya dapatkan setelah mendaftar?
+                  </h4>
+                </div>
+                <i
+                  class="fa-solid fa-chevron-down text-gray-400 transition-transform duration-300"
+                ></i>
+              </div>
+              <div class="faq-content mt-3 hidden text-gray-600">
+                Anda akan menerima update progres dan undangan eksklusif ke
+                pelatihan BK digital UCIC.
+              </div>
+            </div>
+
+            <!-- 3️⃣ FAQ item -->
+            <div
+              class="bg-white rounded-xl shadow-sm p-5 cursor-pointer transition hover:shadow-md faq-item"
+            >
+              <div class="flex justify-between items-center">
+                <div class="flex items-center gap-3">
+                  <i
+                    class="fa-solid fa-circle-question text-ucic-blue text-xl"
+                  ></i>
+                  <h4 class="font-semibold text-gray-800">
+                    Apakah data siswa aman?
+                  </h4>
+                </div>
+                <i
+                  class="fa-solid fa-chevron-down text-gray-400 transition-transform duration-300"
+                ></i>
+              </div>
+              <div class="faq-content mt-3 hidden text-gray-600">
+                Sangat aman! Semua data dienkripsi dan disimpan sesuai standar
+                keamanan digital UCIC.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Pre-Register Form -->
+      <section id="daftar" class="py-28 bg-[#f9fbff] fade-in">
+        <div class="max-w-xl mx-auto text-center px-6">
+          <h3 class="text-2xl md:text-3xl font-bold text-ucic-blue mb-4">
+            Daftar Tunggu CICurhat
+          </h3>
+          <p class="text-gray-600 mb-8">
+            Isi form singkat di bawah ini untuk mendaftarkan sekolah Anda
+            sebagai peserta awal platform CICurhat.
+          </p>
+
+          <form class="bg-white rounded-2xl shadow-sm p-8 space-y-4 text-left">
+            <div>
+              <label for="nama" class="block text-sm font-medium text-gray-700"
+                >Nama Lengkap</label
+              >
+              <input
+                id="nama"
+                type="text"
+                placeholder="Nama Anda"
+                class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-ucic-blue"
+                required
+              />
+            </div>
+
+            <div>
+              <label for="email" class="block text-sm font-medium text-gray-700"
+                >Email Sekolah</label
+              >
+              <input
+                id="email"
+                type="email"
+                placeholder="contoh@email.com"
+                class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-ucic-blue"
+                required
+              />
+            </div>
+
+            <div>
+              <label
+                for="sekolah"
+                class="block text-sm font-medium text-gray-700"
+                >Nama Sekolah</label
+              >
+              <input
+                id="sekolah"
+                type="text"
+                placeholder="Nama Sekolah Anda"
+                class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-ucic-blue"
+                required
+              />
+            </div>
+
+            <div class="text-center pt-2">
+              <button
+                type="button"
+                class="bg-ucic-blue text-white px-6 py-3 rounded-lg shadow-md hover:shadow-lg hover:translate-y-[-2px] active:translate-y-[1px] transition-all duration-200 font-semibold"
+              >
+                Kirim Form (Dummy)
+              </button>
+              <p class="text-sm text-gray-500 mt-3">
+                Tombol ini belum aktif — nanti akan terhubung ke sistem
+                pendaftaran resmi UCIC.
+              </p>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="bg-ucic-blue text-white text-center py-6">
+        <p class="font-medium">© 2025 CICurhat - UCIC | Semua Hak Dilindungi</p>
+        <p class="text-sm mt-2">
+          Didukung oleh Universitas Catur Insan Cendekia
+        </p>
+      </footer>
+    </main>
+    <script>
+      // Navbar toggle
+      const menuBtn = document.getElementById("menu-btn");
+      const menu = document.getElementById("menu");
+      menuBtn.addEventListener("click", () => {
+        menu.classList.toggle("hidden");
+      });
+
+      // Fade-in observer
+      const faders = document.querySelectorAll(
+        ".fade-in, .fade-in-left, .fade-in-right"
+      );
+      const appearOptions = { threshold: 0.2 };
+      const appearOnScroll = new IntersectionObserver(function (
+        entries,
+        observer
+      ) {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add("show");
+          observer.unobserve(entry.target);
+        });
+      },
+      appearOptions);
+      faders.forEach((fader) => appearOnScroll.observe(fader));
+
+      // FAQ Accordion
+      document.querySelectorAll(".faq-item").forEach((item) => {
+        const chevron = item.querySelector(".fa-chevron-down");
+        const content = item.querySelector(".faq-content");
+        item.addEventListener("click", () => {
+          content.classList.toggle("hidden");
+          chevron.classList.toggle("rotate-180");
+        });
+      });
+    </script>
+  </body>
+</html>
