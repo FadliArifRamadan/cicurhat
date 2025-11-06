@@ -63,25 +63,30 @@
   <body class="font-poppins bg-gray-50 text-gray-900">
     <!-- Navbar -->
     <nav
-      class="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm border-b border-gray-100"
+      class="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm border-b border-gray-100 py-3"
     >
       <div class="max-w-7xl mx-auto flex items-center justify-between p-4">
         <div class="flex items-center gap-3">
           <img
-            src="./assets/logo-ucic.png"
+            src="./assets/logo-cicurhat.png"
             alt="Logo UCIC"
-            class="h-16 w-auto"
+            class="h-8 w-auto"
           />
         </div>
 
-        <!-- Hamburger -->
-        <button
-          id="menu-btn"
-          class="md:hidden flex flex-col space-y-1.5 focus:outline-none"
-        >
-          <span class="block w-6 h-0.5 bg-ucic-blue"></span>
-          <span class="block w-6 h-0.5 bg-ucic-blue"></span>
-          <span class="block w-6 h-0.5 bg-ucic-blue"></span>
+        <!-- Tombol Hamburger -->
+        <button id="menu-btn" class="block md:hidden focus:outline-none">
+          <div class="space-y-1.5 transition-all duration-300">
+            <span
+              class="block w-6 h-0.5 bg-ucic-blue transition-transform duration-300 origin-center"
+            ></span>
+            <span
+              class="block w-6 h-0.5 bg-ucic-blue transition-opacity duration-300"
+            ></span>
+            <span
+              class="block w-6 h-0.5 bg-ucic-blue transition-transform duration-300 origin-center"
+            ></span>
+          </div>
         </button>
 
         <!-- Menu -->
@@ -129,41 +134,41 @@
       <!-- Hero Section -->
       <section
         id="hero"
-        class="snap-start min-h-screen flex items-center justify-center text-center bg-cover bg-center relative fade-in"
-        style="background-image: url('./assets/hero-bg.png')"
+        class="snap-start min-h-screen flex items-center bg-cover bg-center relative fade-in"
+        style="background-image: url('./assets/hero-bg-1.png')"
       >
-        <!-- Overlay blur transparan -->
-        <div class="absolute inset-0 bg-black/30 backdrop-blur-sm"></div>
+        <div class="absolute inset-0 bg-[#134ca7]/40 backdrop-blur-sm"></div>
 
-        <!-- Konten Hero -->
-        <div class="relative z-10 max-w-3xl px-6">
-          <div class="flex justify-center mb-6">
+        <div
+          class="relative z-10 max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between px-6 md:px-12"
+        >
+          <div class="text-center md:text-left md:w-1/2">
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">
+              SEGERA HADIR!
+            </h2>
+            <p class="text-lg md:text-2xl font-semibold mb-6 text-white">
+              Era Baru Bimbingan Konseling Sekolah yang Digital dan
+              <span class="text-ucic-yellow">GRATIS</span>.
+            </p>
+            <p class="text-gray-200 mb-8">
+              Daftarkan Sekolah Anda sekarang di Daftar Tunggu CICurhat dan
+              jadilah yang pertama menggunakan Platform Bimbingan Konseling
+              Gratis dari UCIC.
+            </p>
+            <a
+              href="#daftar"
+              class="bg-ucic-blue text-white px-6 py-3 rounded-lg shadow-md hover:shadow-lg hover:-translate-y-1 transition font-semibold"
+            >
+              Amankan Slot Sekolah Anda
+            </a>
+          </div>
+          <div class="hidden md:block md:w-1/2">
             <img
-              src="./assets/logo-ucic.png"
-              alt="Logo UCIC"
-              class="h-16 w-auto drop-shadow-md"
+              src="./assets/hero-bg-1.png"
+              alt="Konseling Digital"
+              class="rounded-2xl opacity-0"
             />
           </div>
-
-          <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">
-            SEGARA HADIR!
-          </h2>
-          <p class="text-lg md:text-2xl font-semibold mb-6 text-white">
-            Era Baru Bimbingan Konseling Sekolah yang Digital dan
-            <span class="text-ucic-yellow">GRATIS</span>.
-          </p>
-          <p class="text-gray-200 mb-8">
-            Daftarkan Sekolah Anda sekarang di Daftar Tunggu CICurhat dan
-            jadilah yang pertama menggunakan Platform Bimbingan Konseling Gratis
-            dari UCIC.
-          </p>
-
-          <a
-            href="#daftar"
-            class="bg-ucic-blue text-white px-6 py-3 rounded-lg shadow-md hover:shadow-lg hover:-translate-y-1 transition-all duration-300 font-semibold"
-          >
-            Amankan Slot Sekolah Anda
-          </a>
         </div>
       </section>
 
